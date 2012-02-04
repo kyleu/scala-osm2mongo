@@ -12,5 +12,6 @@ project/boot/
 .idea
 .classpath
 .project
+.settings
 .cache
 *.iml
