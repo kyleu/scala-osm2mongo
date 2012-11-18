@@ -2,6 +2,7 @@ project/target/
 tmp/
 target/
 logs/
+bin/
 repository/
 dist/
 *.lock
