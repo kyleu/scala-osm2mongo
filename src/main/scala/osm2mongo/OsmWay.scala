@@ -12,9 +12,8 @@ object OsmWay {
   def apply(obj: Obj) = {
     val nodeRefs: ObjList = obj.as[BasicDBList]("nodes")
     val nodeIds = nodeRefs.map(_.asInstanceOf[Int])
-    new OsmWay(obj.as[Int]("osmid"), nodeIds, Tags.load(obj))
+    new OsmWay(obj.as[Int]("osmId"), nodeIds, Tags.load(obj))
   }
 }
 
-case class OsmWay(osmId: Int, nodeIds: Seq[Int], tags: Map[String, String] = Map.empty) extends Tags {
-}
+case class OsmWay(osmId: Int, nodeIds: Seq[Int], tags: Map[String, String] = Map.empty) extends Tags

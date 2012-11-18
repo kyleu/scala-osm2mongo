@@ -26,7 +26,7 @@ object OsmImporter {
           val attrs = elem.attrs.asAttrMap
           if (elem.label == "node" || elem.label == "way" || elem.label == "relation") {
             current = Obj.newBuilder
-            current += ("osmid" -> attrs("id").toInt)
+            current += ("osmId" -> attrs("id").toInt)
           }
           elem.label match {
             case "node" => current += ("loc" -> ObjList(attrs("lon").toFloat, attrs("lat").toFloat))

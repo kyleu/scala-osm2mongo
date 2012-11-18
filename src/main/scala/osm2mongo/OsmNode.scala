@@ -9,10 +9,8 @@ object OsmNode {
 
   def apply(obj: Obj): OsmNode = {
     var loc = obj.as[BasicDBList]("loc")
-    new OsmNode(obj.as[Int]("osmid"), Point(loc), Tags.load(obj))
+    new OsmNode(obj.as[Int]("osmId"), Point(loc), Tags.load(obj))
   }
 }
 
-case class OsmNode(osmId: Int, loc: Point, tags: Map[String, String] = Map()) extends Tags {
-  def this(osmId: Int, loc: Point, tags: Obj) = this(osmId, loc, Tags.load(tags))
-}
+case class OsmNode(osmId: Int, loc: Point, tags: Map[String, String] = Map()) extends Tags
